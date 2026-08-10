@@ -1,9 +1,10 @@
 import xml.etree.ElementTree as ET
 from typing import IO, Union
 from src.models import OrdreMission
+from io import StringIO
 
 
-def extract_darva_data(xml_source: Union[IO[bytes], str]) -> OrdreMission:
+def extract_darva_data(xml_source: Union[IO[bytes], str, StringIO]) -> OrdreMission:
     """
     Extrait les données et retourne un modèle Pydantic validé.
     """

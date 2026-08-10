@@ -11,7 +11,7 @@ class PDF(FPDF):
             0,
             10,
             "ORDRE DE MISSION - RÉPARATION COLLISION",
-            border=True,
+            border=1,
             align="C",
             new_x="LMARGIN",
             new_y="NEXT",

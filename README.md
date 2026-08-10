@@ -35,3 +35,27 @@ Assurez-vous d'avoir uv installé sur votre machine pour gérer votre environnem
 - `uv run cli.py input\demo_optimum.xml -o autre/chemin/de/sortie`
 
 ![screen_cli_typer](./docs/screen_cli_typer.png)
+
+## 📦 Installation & commandes
+
+1. Installer uv 👉 cf. [doc astral/uv](https://docs.astral.sh/uv/getting-started/installation/)
+2. Lancer l'app streamlit : `uv run streamlit run app.py`
+
+
+## 🧪 Astuces développement
+
+- Charger le .venv dans le terminal (pour utiliser `streamlit` sans `uv run` avant)
+  - `source .venv/bin/activate` (linux) ou `.venv/Scripts/activate.ps1` (windows)
+- Lancer les tests unitaires
+  - `uv run pytest`
+- S'assurer que `prek` (pre-commit en rust) est installé
+  ```bash
+  # Installer les hooks pre-commit
+  prek install --overwrite
+
+  # Lancer manuellement les checks de qualité (Ruff, Pyright, etc.)
+  prek
+
+  # idem avec les fichiers non modifiés
+  prek -a
+  ```

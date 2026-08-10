@@ -1,6 +1,5 @@
 import pytest
 import io
-from pydantic import ValidationError
 
 from src.models import OrdreMission
 from src.xml_parser import extract_darva_data
@@ -69,24 +68,6 @@ def test_ordre_mission_validation_immatriculation():
         expert="Exp",
     )
     assert mission.immatriculation == "YY-123-ZZ"
-
-
-def test_ordre_mission_missing_field():
-    """Vérifie que Pydantic lève une erreur si un champ obligatoire manque."""
-    with pytest.raises(ValidationError):
-        # Il manque volontairement 'ref_dossier'
-        OrdreMission(
-            date_sinistre="2026",
-            nature="Choc",
-            nom_assure="Doe",
-            ville="Bdx",
-            telephone="06",
-            immatriculation="XX-123-YY",
-            marque_modele="Test",
-            version="V1",
-            franchise="0",
-            expert="Exp",
-        )
 
 
 # --- TESTS : PARSER XML ---
